@@ -1,0 +1,5 @@
+<div>
+    <input type="text" data-field="chatText"/>
+    <button data-field="sendChat">send</button>
+    <label data-field="response"></label>
+</div>

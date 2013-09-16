@@ -1,0 +1,7 @@
+<div>
+    <textarea rows="1" cols="10" data-field="myTextArea"></textarea>
+    <br/>
+    <label data-field="rows"></label> rows <br/>
+    <label data-field="cols"></label> cols <br/>
+    <label data-field="characters"></label> characters <br/>
+</div>

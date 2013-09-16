@@ -1,0 +1,1 @@
+mvn -Ptomcat clean package
