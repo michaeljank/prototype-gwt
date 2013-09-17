@@ -1,7 +1,0 @@
-at.apa.ots.manager.frontend.client.local.App
-at.apa.ots.manager.frontend.client.local.page.textarea.TextArea
-at.apa.ots.manager.frontend.client.local.page.chat.Chat
-at.apa.ots.manager.frontend.client.local.page.menu.Menu
-at.apa.ots.manager.frontend.server.SimpleCDIService
-at.apa.ots.manager.frontend.client.shared.HelloMessage
-at.apa.ots.manager.frontend.client.shared.Response
