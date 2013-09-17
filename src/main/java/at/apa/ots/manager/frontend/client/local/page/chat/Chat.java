@@ -1,5 +1,6 @@
 package at.apa.ots.manager.frontend.client.local.page.chat;
 
+import at.apa.ots.manager.frontend.client.local.page.menu.Menu;
 import at.apa.ots.manager.frontend.client.shared.HelloMessage;
 import at.apa.ots.manager.frontend.client.shared.Response;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -17,6 +18,10 @@ import javax.inject.Inject;
 @Templated
 @Page(startingPage = true)
 public class Chat extends Composite {
+    @Inject
+    @DataField
+    private Menu menu;
+
     @Inject
     @DataField
     private TextBox chatText;

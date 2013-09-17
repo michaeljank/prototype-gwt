@@ -1,5 +1,6 @@
 package at.apa.ots.manager.frontend.client.local.page.textarea;
 
+import at.apa.ots.manager.frontend.client.local.page.menu.Menu;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.user.client.ui.Label;
 import org.jboss.errai.ui.shared.api.annotations.*;
@@ -11,6 +12,10 @@ import javax.inject.Inject;
 @Templated
 @Page
 public class TextArea extends Composite {
+    @Inject
+    @DataField
+    private Menu menu;
+
     @Inject
     @DataField
     private com.google.gwt.user.client.ui.TextArea myTextArea;
