@@ -1,0 +1,74 @@
+    JQuery datepicker: <input type="text" id="datepicker" /><br/>
+    <br/>
+    JQuery hello: <input type="button" id="helloButton" value="say hello"/><br/>
+    <br/>
+    <input type="button" id="slideInButton" data-field="slideInButton"/><br/>
+    <br/>
+    <div class="toggler">
+        <div id="sidepanel" class="ui-widget-content ui-corner-all" style="width: 150px; position: absolute; top: 200px; text-align: center">
+            <h3 class="ui-widget-header ui-corner-all">The Sidepanel</h3>
+            <p>
+                <div id="sidepaneldata">Sidepanel data</div>
+            </p>
+            <input type="button" id="slideOutButton" data-field="slideOutButton"/>
+        </div>
+    </div>
+
+
+-------------------------------------
+
+    @Inject
+    @DataField
+    private Button slideInButton;
+
+    @Inject
+    @DataField
+    private Button slideOutButton;
+
+
+    @PageShown
+    public void onShown() {
+        init();
+        slideInButton.setText("Slide panel in");
+        slideOutButton.setText("Close");
+    }
+
+    private native void init() /*-{
+        $wnd.jQuery("#sidepanel").hide();
+        $wnd.jQuery("#datepicker").datepicker();
+        $wnd.jQuery("#helloButton").click(function() {
+            $wnd.alert("hello");
+        });
+    }-*/;
+
+    private native void hideSidePanel(String msg) /*-{
+        $wnd.jQuery("#sidepanel").hide(
+            "slide",
+            "{ percent: 100 }",
+            500,
+            function callback() {
+                $wnd.alert(msg);
+            }
+        );
+    }-*/;
+
+    private native void showSidePanel() /*-{
+        $wnd.jQuery("#sidepanel").show(
+            "slide",
+            "{ percent: 100 }",
+            500,
+            function callback() {
+                $wnd.jQuery("#sidepaneldata").load("help.html");
+            }
+        );
+    }-*/;
+
+    @EventHandler("slideInButton")
+    public void clickIn(ClickEvent e) {
+        showSidePanel();
+    }
+
+    @EventHandler("slideOutButton")
+    public void clickOut(ClickEvent e) {
+        hideSidePanel("panel slide finished!");
+    }
